@@ -3,6 +3,8 @@
 //API key = 3e37be169bd64e9375bad5937587a45a
 // https://openweathermap.org/forecast5
 
+    //add some calculations
+    // show next three hours maybe ??
 
     document.getElementById("submitButton").addEventListener('click', function () {
 
@@ -18,7 +20,6 @@
             .then(function (data) {
                 console.log(data); //fetched information
                 //console.log(city); //city name value
-
 
                 for (var i = 0; i < 5; i++) {    //loop over five days
 
