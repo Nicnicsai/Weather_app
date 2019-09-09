@@ -19,10 +19,14 @@
 
 <section class="container">
     <h1>Weather Application</h1>
+    <span id="error"></span>
     <div class="img-container">
         <img src="http://placehold.jp/300x250.png" alt="City picture">
-        <input type="text" name="cityname" id="city-name" value="Enter City" />
-        <input type="submit" value="Submit">
+        <div class="field">
+            <label for="city-name">City Name:</label>
+            <input type="text" name="city-name" id="city-name" />
+        </div>
+        <button id="submitButton">Search weather</button>
     </div>
 
 
@@ -30,8 +34,6 @@
 </section>
 
 
-
-
-
+<script type="text/javascript" src="weather.js"></script>
 </body>
 </html>
