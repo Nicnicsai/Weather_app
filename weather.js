@@ -2,6 +2,7 @@
 (() => {
 
 //API key = 3e37be169bd64e9375bad5937587a45a
+// https://openweathermap.org/forecast5
 
 
     document.getElementById("submitButton").addEventListener('click',function() {
@@ -17,15 +18,41 @@
             })
             .then(function(data) {
                 console.log(data); //fetched information
-                console.log(city); //city name value
+                //console.log(city); //city name value
+
+
+
+
+                //console.log(today.getDate());
 
 
                 for (var i= 0 ; i < 5 ; i++)  {    //loop over five days
 
-                    var temperature = data.list[i].main.temp;
-                        console.log(temperature);
+                    var iconId = data.list[i].weather[0].icon;
+                    var temperatureMin = data.list[i].main.temp_min;
+                    var temperatureMax = data.list[i].main.temp_max;
                     var description = data.list[i].weather[0].description;
-                    console.log(description);
+                    var today = new Date();
+                    today.setDate(today.getDate() + i);
+                    var displayDate = today.getDate() + "/" + today.getMonth() + "/" + today.getFullYear();
+
+
+                    //select template
+                    var temp = document.getElementsByTagName("template")[0];
+                    //show template
+                    var clon = temp.content.cloneNode(true); //clone floats around in memory
+
+
+                    clon.querySelector(".date").innerHTML = displayDate;
+                    clon.querySelector(".weatherImg").setAttribute("src", "http://openweathermap.org/img/wn/"+ iconId +"@2x.png");
+                    clon.querySelector(".temperature").innerHTML = temperatureMin +"°"+ "/ " + temperatureMax+ "°" ;
+                    clon.querySelector(".description").innerHTML = description;
+
+
+
+                    // here append clone and therefore becomes element
+                    document.getElementById("target").appendChild(clon); // template cloned and put here
+
 
                 }
 

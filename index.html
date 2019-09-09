@@ -18,6 +18,16 @@
 <body>
 
 <section class="container">
+
+    <template id="tpl-weather">
+        <li class="weather">
+            <h4 class="date"></h4>
+            <img src="" alt="Weather Icon" class="weatherImg">
+            <div class="temperature"></div>
+            <p class="description"></p>
+        </li>
+    </template>
+
     <h1>Weather Application</h1>
     <span id="error"></span>
     <div class="img-container">
@@ -29,6 +39,9 @@
         <button id="submitButton">Search weather</button>
     </div>
 
+    <div class="weatherDisplay">
+    <ol id="target"></ol>
+    </div>
 
 
 </section>

@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "",
-"sources": [],
+"mappings": "AAAA,EAAG;EACD,eAAe,EAAE,IAAI",
+"sources": ["weather.scss"],
 "names": [],
 "file": "weather.css"
 }
