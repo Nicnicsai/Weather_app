@@ -22,6 +22,8 @@
                 console.log(data); //fetched information
 
                 //EMPTY ARRAYS
+                var a = [];
+                var b = [];
                 var currentDayArray = [];
                 var secondDayArray = [];
                 var thirdDayArray = [];
@@ -29,52 +31,28 @@
                 var fifthDayArray = [];
 
 
-
-
                 for (var i = 0; i < data.list.length; i++) {
 
-                  var x =  data.list[i].dt_txt.slice(0,10);
-                  console.log(x);
+                  var unixTimestamp =  data.list[i].dt; //unix timestamp
 
-                  if (x = )
-
-                }
-
-
-                for (var y = 0; y < 5; y++) {   //loop over five days
+                    // FROM UNIXTIMESTAMP TO UTC
+                   var dateObj = new Date(unixTimestamp * 1000);
+                   var  utcString = dateObj.toUTCString();
+                   //var  time = utcString.slice(-11, -4);    hours sliced
+                    console.log(utcString);
 
 
-                    //var iconId = data.list[y].weather[0].icon;
-                    //var temperatureMin = data.list[y].main.temp_min;
-                    //var temperatureMax = data.list[y].main.temp_max;
-                    // var description = data.list[y].weather[0].description;
-
-                    var today = new Date();
-                    var month = (today.getMonth() + 1);
-                    var numberDate = today.getDate() + y;
-                    var displayDate = today.getFullYear() + "-" + "0" + month + "-" + numberDate;
-                    //var currentTemp = data.list[y].main.temp;
-
-                    console.log(displayDate);
-
-                    //select template
-                    var temp = document.getElementsByTagName("template")[0];
-                    //show template
-                    var clon = temp.content.cloneNode(true); //clone floats around in memory
 
 
-                    clon.querySelector(".date").innerHTML = displayDate;
-                    //clon.querySelector(".weatherImg").setAttribute("src", "http://openweathermap.org/img/wn/" + iconId + "@2x.png");
-                    //clon.querySelector(".currentTemperature").innerHTML = currentTemp;
-                    //clon.querySelector(".temperature").innerHTML = temperatureMin + "°" + "/ " + temperatureMax + "°";
-                    //clon.querySelector(".description").innerHTML = description;
-
-
-                    // here append clone and therefore becomes element
-                    document.getElementById("target").appendChild(clon); // template cloned and put here
 
 
                 }
+
+
+
+
+
+
 
 
 
