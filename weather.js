@@ -19,7 +19,6 @@
                 return response.json();
             })
             .then(function (data) {
-                console.log(data); //fetched information
 
                 //EMPTY ARRAYS
                 var currentDayArray = [];
@@ -56,7 +55,7 @@
                         var a = data.list[i];
                         fourthDayArray.push(a);
                     }
-                    if(time === +(dayOfToday)+3){
+                    if(time === +(dayOfToday)+4){
                         var b = data.list[i];
                         fifthDayArray.push(b);
                     }
@@ -64,24 +63,14 @@
 
                 // Math.min(n1, n2, n3, ..., nX)
 
-                // not concat
-
                 var fiveDayArrays = [];
-
                 fiveDayArrays.push([currentDayArray],[secondDayArray],[thirdDayArray],[fourthDayArray],[fifthDayArray]);
-
                 console.log(fiveDayArrays);
-                //console.log(secondDayArray);
-                //console.log(thirdDayArray);
-                //console.log(fourthDayArray);
-                //console.log(fifthDayArray);
 
 
 
 
                /* for (var y = 0; y < 5; y++) {   //loop over five days
-
-
                 }*/
 
 
