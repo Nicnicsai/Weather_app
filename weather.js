@@ -38,15 +38,19 @@
                     // FROM UNIXTIMESTAMP TO UTC
                    var dateObj = new Date(unixTimestamp * 1000);
                    var  utcString = dateObj.toUTCString();
-                   //var  time = utcString.slice(-11, -4);    hours sliced
-                    console.log(utcString);
+                   var  time = +(utcString.slice(5, 8)); // day number
 
+                    if(time === 10) {
 
+                        var x = data.list[i];
 
-
-
+                        a.push(x);
+                    }
 
                 }
+
+                console.log(a);
+
 
 
 
