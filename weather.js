@@ -4,7 +4,9 @@
 // https://openweathermap.org/forecast5
 
     //add some calculations
-    // show next three hours maybe ??
+    // show next three hours maybe ?? Main temperature gemiddelde van drie volgende uren
+
+    var emptyArray = [];
 
     document.getElementById("submitButton").addEventListener('click', function () {
 
@@ -19,19 +21,27 @@
             })
             .then(function (data) {
                 console.log(data); //fetched information
-                //console.log(city); //city name value
 
-                for (var i = 0; i < 5; i++) {    //loop over five days
 
-                    var iconId = data.list[i].weather[0].icon;
-                    var temperatureMin = data.list[i].main.temp_min;
-                    var temperatureMax = data.list[i].main.temp_max;
-                    var description = data.list[i].weather[0].description;
+               /* for (var i = 0; i < data.list.length; i++) {
+
+                    var stringSlice = (data.list[i].dt_txt).slice(0, 10);
+                    console.log(stringSlice);
+                }*/
+
+                for (var y = 0; y < 5; y++) {   //loop over five days
+
+
+                    //var iconId = data.list[y].weather[0].icon;
+                    //var temperatureMin = data.list[y].main.temp_min;
+                    //var temperatureMax = data.list[y].main.temp_max;
+                    // var description = data.list[y].weather[0].description;
+
                     var today = new Date();
-                    today.setDate(today.getDate() + i);
-                    var displayDate = today.getDate() + "/" + today.getMonth() + "/" + today.getFullYear();
-                    var currentTemp = data.list[i].main.temp;
-
+                    var month = (today.getMonth() + 1);
+                    var numberDate = today.getDate() + y;
+                    var displayDate = today.getFullYear() + "-" + "0" + month + "-" + numberDate;
+                    //var currentTemp = data.list[y].main.temp;
 
                     //select template
                     var temp = document.getElementsByTagName("template")[0];
@@ -40,14 +50,21 @@
 
 
                     clon.querySelector(".date").innerHTML = displayDate;
-                    clon.querySelector(".weatherImg").setAttribute("src", "http://openweathermap.org/img/wn/" + iconId + "@2x.png");
-                    clon.querySelector(".currentTemperature").innerHTML = currentTemp;
-                    clon.querySelector(".temperature").innerHTML = temperatureMin + "°" + "/ " + temperatureMax + "°";
-                    clon.querySelector(".description").innerHTML = description;
+                    //clon.querySelector(".weatherImg").setAttribute("src", "http://openweathermap.org/img/wn/" + iconId + "@2x.png");
+                    //clon.querySelector(".currentTemperature").innerHTML = currentTemp;
+                    //clon.querySelector(".temperature").innerHTML = temperatureMin + "°" + "/ " + temperatureMax + "°";
+                    //clon.querySelector(".description").innerHTML = description;
 
+                    var weatherDate = clon.querySelector(".date").innerHTML;
 
                     // here append clone and therefore becomes element
                     document.getElementById("target").appendChild(clon); // template cloned and put here
+                    console.log(weatherDate);
+
+                  /*  var arrayJson = data.list[y].dt_txt;
+                   if((arrayJson.includes(String(displayDate))) == true){
+                       emptyArray = arrayJson;
+                   }*/
 
 
                 }
@@ -56,6 +73,7 @@
             })
 
     })
+
 
 
 })();
