@@ -22,14 +22,13 @@
                 console.log(data); //fetched information
 
                 //EMPTY ARRAYS
-                var a = [];
-                var b = [];
                 var currentDayArray = [];
                 var secondDayArray = [];
                 var thirdDayArray = [];
                 var fourthDayArray = [];
                 var fifthDayArray = [];
 
+                var dayOfToday = new Date().getDate();
 
                 for (var i = 0; i < data.list.length; i++) {
 
@@ -40,18 +39,50 @@
                    var  utcString = dateObj.toUTCString();
                    var  time = +(utcString.slice(5, 8)); // day number
 
-                    if(time === 10) {
-
+                    // MAKE DAY ARRAYS
+                    if(time === dayOfToday) {
                         var x = data.list[i];
-
-                        a.push(x);
+                        currentDayArray.push(x);
                     }
-
+                    if(time === +(dayOfToday)+1){
+                        var m = data.list[i];
+                        secondDayArray.push(m);
+                    }
+                    if(time === +(dayOfToday)+2){
+                        var z = data.list[i];
+                        thirdDayArray.push(z);
+                    }
+                    if(time === +(dayOfToday)+3){
+                        var a = data.list[i];
+                        fourthDayArray.push(a);
+                    }
+                    if(time === +(dayOfToday)+3){
+                        var b = data.list[i];
+                        fifthDayArray.push(b);
+                    }
                 }
 
-                console.log(a);
+                // Math.min(n1, n2, n3, ..., nX)
+
+                // not concat
+
+                var fiveDayArrays = [];
+
+                fiveDayArrays.push([currentDayArray],[secondDayArray],[thirdDayArray],[fourthDayArray],[fifthDayArray]);
+
+                console.log(fiveDayArrays);
+                //console.log(secondDayArray);
+                //console.log(thirdDayArray);
+                //console.log(fourthDayArray);
+                //console.log(fifthDayArray);
 
 
+
+
+               /* for (var y = 0; y < 5; y++) {   //loop over five days
+
+
+                }*/
 
 
 

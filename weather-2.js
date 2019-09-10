@@ -43,7 +43,6 @@
 
                 for (var y = 0; y < 5; y++) {   //loop over five days
 
-
                     //var iconId = data.list[y].weather[0].icon;
                     //var temperatureMin = data.list[y].main.temp_min;
                     //var temperatureMax = data.list[y].main.temp_max;
