@@ -33,12 +33,12 @@
 
                 for (var i = 0; i < data.list.length; i++) {
 
-                  var x =  data.list[i].dt_txt.slice(0,10);
-                  console.log(x);
+                    var x =  data.list[i].dt_txt.slice(0,10);
+                    console.log(x);
 
-                  if (x = )
+                    if (x = )
 
-                }
+                        }
 
 
                 for (var y = 0; y < 5; y++) {   //loop over five days
