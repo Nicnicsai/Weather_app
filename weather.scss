@@ -36,10 +36,13 @@ h1 {
 .img-container{
 text-align: center;
 }
+body {
+  background-color: #e6f4f1 ;
+}
 
 #submitButton {
   margin-top: 20px;
-  background-color: lightblue;
+  background-color: #9ac8e9;
   border: none;
   padding: 15px 12px;
   font-family: 'Manjari Regular', 'sans-serif';
@@ -48,8 +51,8 @@ text-align: center;
 
 #city-name {
   border: none;
-  border-bottom: solid 2px midnightblue;
   padding: 6px 10px;
+  background-color: rgba(46, 97, 132, 0.1);
 
 }
 
