@@ -185,6 +185,28 @@
 
 
 
+                for ( var date = 0; date < 5 ; date++){
+
+                    var dates = new Date();
+                    dates.setDate(dates.getDate() + date);
+                    //console.log(dates.toUTCString());
+
+                    //select template
+                    var temp = document.getElementsByTagName("template")[0];
+                    //show template
+                    var clon = temp.content.cloneNode(true); //clone floats around in memory
+
+
+                    clon.querySelector(".date").innerHTML = dates.toUTCString().slice(5,16);
+                    //console.log(dates.toUTCString().slice(5,16))
+                    clon.querySelector(".weatherImg").setAttribute("src", "http://openweathermap.org/img/wn/" + ICONS[date] + "@2x.png");
+                    clon.querySelector(".currentTemperature").innerHTML = TEMP[date];
+                    clon.querySelector(".temperature").innerHTML = MIN[date] + "°" + "/ " + MAX[date] + "°";
+                    clon.querySelector(".description").innerHTML = DESCRIPTION[date];
+
+                    // here append clone and therefore becomes element
+                    document.getElementById("target").appendChild(clon); // template cloned and put here
+                }
 
 
 
