@@ -14,35 +14,36 @@
     <!--CSS LINK -->
     <link rel="stylesheet" href="weather.css">
 
+    <link href="https://fonts.googleapis.com/css?family=Manjari:100,400,700&display=swap" rel="stylesheet">
+
 </head>
 <body>
 
 <section class="container">
 
     <template id="tpl-weather">
-        <li class="weather">
-            <h2 class="date"></h2>
-            <img src="" alt="Weather Icon" class="weatherImg">
-            <h4 class="currentTemperature"></h4>
-            <div class="temperature"></div>
-            <p class="description"></p>
-        </li>
+        <ul class="weather">
+            <li><h2 class="date"></h2></li>
+            <li><img src="" alt="Weather Icon" class="weatherImg"></li>
+            <li><h4 class="currentTemperature"></h4></li>
+            <li><div class="temperature"></div></li>
+            <li><p class="description"></p></li>
+        </ul>
     </template>
 
     <h1>Weather Application</h1>
-    <span id="error"></span>
     <div class="img-container">
-        <img src="http://placehold.jp/300x250.png" alt="City picture">
+       <!-- <img src="http://placehold.jp/300x250.png" alt="City picture"> -->
         <div class="field">
-            <label for="city-name">City Name:</label>
-            <input type="text" name="city-name" id="city-name" />
+            <div><label for="city-name">City Name:</label></div>
+            <div><input type="text" name="city-name" id="city-name" value="Antwerp"/></div>
         </div>
         <button id="submitButton">Search weather</button>
     </div>
 
     <div class="weatherDisplay">
     <ol id="target"></ol>
-    </div>
+   </div>
 
 
 </section>

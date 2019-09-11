@@ -1,4 +1,56 @@
-li {
-  list-style-type: none; }
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Manjari', sans-serif; }
+
+.container {
+  margin-top: 20vh; }
+
+ul {
+  list-style-type: none;
+  overflow: hidden;
+  padding: 10px; }
+
+ol ul {
+  display: inline-block;
+  width: 19%;
+  text-align: center; }
+
+#target {
+  margin-right: 0; }
+
+h1 {
+  text-align: center;
+  font-family: 'Manjari Bold', 'sans-serif'; }
+
+.img-container {
+  text-align: center; }
+
+#submitButton {
+  margin-top: 20px;
+  background-color: lightblue;
+  border: none;
+  padding: 15px 12px;
+  font-family: 'Manjari Regular', 'sans-serif';
+  border-radius: 15px; }
+
+#city-name {
+  border: none;
+  border-bottom: solid 2px midnightblue;
+  padding: 6px 10px; }
+
+.weather {
+  margin-top: 20px; }
+
+ul:first-of-type {
+  background-color: #9ac8e9;
+  border-radius: 15px; }
+
+@media only screen and (max-width: 767px) {
+  ol ul {
+    display: block;
+    width: auto;
+    text-align: center; } }
 
 /*# sourceMappingURL=weather.css.map */

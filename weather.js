@@ -182,9 +182,6 @@
                 console.log(MAX);
                 console.log(DESCRIPTION);
 
-
-
-
                 for ( var date = 0; date < 5 ; date++){
 
                     var dates = new Date();
@@ -204,25 +201,11 @@
                     clon.querySelector(".temperature").innerHTML = MIN[date] + "°" + "/ " + MAX[date] + "°";
                     clon.querySelector(".description").innerHTML = DESCRIPTION[date];
 
+
+
                     // here append clone and therefore becomes element
                     document.getElementById("target").appendChild(clon); // template cloned and put here
                 }
-
-
-
-
-                //Make arrays to loop over 5 days
-
-
-
-
-
-
-
-
-
-
-
             })
     })
 
