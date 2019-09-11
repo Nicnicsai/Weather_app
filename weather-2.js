@@ -36,10 +36,6 @@
                     var x =  data.list[i].dt_txt.slice(0,10);
                     console.log(x);
 
-                    if (x = )
-
-                        }
-
 
                 for (var y = 0; y < 5; y++) {   //loop over five days
 
