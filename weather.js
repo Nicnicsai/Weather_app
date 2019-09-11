@@ -85,7 +85,8 @@
                 DESCRIPTION.unshift(fiveDayArrays[0][0][0].weather[0].description);
 
 
-                for (var current= 0; current < fiveDayArrays.length; current++) {
+
+                for (var current= 0; current < fiveDayArrays[0][0].length; current++) { //length is 5
 
                     //console.log(fiveDayArrays[0][0][current].main.temp_min);
                     currentMinTemp.push(fiveDayArrays[0][0][current].main.temp_min);
@@ -93,9 +94,12 @@
                     currentMaxTemp.push(fiveDayArrays[0][0][current].main.temp_max);
                 }
 
+                for (var loop = 0; loop < currentMinTemp.length ; loop++){
 
-                var minToday = Math.round(Math.min(currentMinTemp[0],currentMinTemp[1],currentMinTemp[2],currentMinTemp[3],currentMinTemp[4]));
-                var maxToday = Math.round(Math.max(currentMaxTemp[0],currentMaxTemp[1],currentMaxTemp[2],currentMaxTemp[3],currentMaxTemp[4]));
+                    var minToday = Math.round(Math.min(currentMinTemp[loop]));
+                    var maxToday = Math.round(Math.max(currentMaxTemp[loop]));
+                }
+
 
                // console.log(minToday, maxToday); //15 & 18 Antwerp    // MIN and Max today
 
@@ -118,15 +122,16 @@
                 for (var y = 1; y < 5; y++) {   //loop over four days
 
                     ICONS.push(fiveDayArrays[y][0][4].weather[0].icon);
-                   console.log(fiveDayArrays[y][0][4].weather[0].icon); //ICONS (03d)
-                    DESCRIPTION.push(fiveDayArrays[y][0][4].weather[0].description); //description (scattered clouds)
-
+                  // console.log(fiveDayArrays[y][0][4].weather[0].icon); //ICONS (03d)
+                   // console.log(fiveDayArrays[y][0][4].weather[0].description); //description (scattered clouds)
+                    DESCRIPTION.push(fiveDayArrays[y][0][4].weather[0].description);
                         for (var eightLoop = 0; eightLoop < 8; eightLoop++) {
                             //console.log(fiveDayArrays[y][0][eightLoop].main.temp_min);
                             minTemp.push(fiveDayArrays[y][0][eightLoop].main.temp_min);
                             maxTemp.push(fiveDayArrays[y][0][eightLoop].main.temp_max);
                         }
                 }
+
 
                 console.log(ICONS);
 
@@ -176,6 +181,13 @@
                 console.log(MIN);
                 console.log(MAX);
                 console.log(DESCRIPTION);
+
+
+
+
+
+
+
 
                 //Make arrays to loop over 5 days
 
