@@ -1,10 +1,15 @@
 (() => {
-
+    const MAX_DAYS = 5;
 //API key = 3e37be169bd64e9375bad5937587a45a
 // https://openweathermap.org/forecast5
 
     //add some calculations
     // show next three hours maybe ?? Main temperature gemiddelde van drie volgende uren
+
+    var now = new Date(2019, 9, 29).getDate();
+    var now = new Date(2019, 9, 29);
+    now.setDate(now.getDate() + 5);
+    console.log(now)
 
 
     document.getElementById("submitButton").addEventListener('click', function () {
@@ -20,6 +25,8 @@
             })
             .then(function (data) {
 
+                console.log("data", data.city.country);
+
                 //EMPTY ARRAYS
                 var currentDayArray = [];
                 var secondDayArray = [];
@@ -27,14 +34,26 @@
                 var fourthDayArray = [];
                 var fifthDayArray = [];
 
+                // cleaner way to make arrays in array
+                var days = [];
 
+// const in capitals not var
                 var ICONS = [];
                 var TEMP = [];
                 var MIN = [];
                 var MAX = [];
                 var DESCRIPTION = [];
 
+                var todayDays = [];
+                for (i=0; i < MAX_DAYS; i++) {
+                    let dayOfToday = new Date().getDate();
+                    dayOfToday.setDate(dayOfToday.getDate() + i);
+                    todayDays[i] = dayOfToday;
+                    days[i] = [];
+                }
+
                 var dayOfToday = new Date().getDate();
+
 
                 for (var i = 0; i < data.list.length; i++) {
 
@@ -44,6 +63,7 @@
                    var dateObj = new Date(unixTimestamp * 1000);
                    var  utcString = dateObj.toUTCString();
                    var  time = +(utcString.slice(5, 8)); // day number
+
 
                     // MAKE DAY ARRAYS
                     if(time === dayOfToday) {
